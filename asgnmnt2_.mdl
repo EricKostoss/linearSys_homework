@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.1"
+    ComputedModelVersion    "1.2"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -47,7 +47,7 @@ Model {
       $ObjectID		      2
       $ClassName	      "Simulink.WindowInfo"
       IsActive		      [1]
-      Location		      [93.0, 84.0, 814.0, 533.0]
+      Location		      [93.0, 87.0, 814.0, 533.0]
       Object {
 	$PropName		"ModelBrowserInfo"
 	$ObjectID		3
@@ -72,8 +72,8 @@ Model {
 	ViewObjType		"SimulinkTopLevel"
 	LoadSaveID		"0"
 	Extents			[760.0, 352.0]
-	ZoomFactor		[1.0]
-	Offset			[-118.30000337958336, -34.999999999999972]
+	ZoomFactor		[1.25]
+	Offset			[-125.97601410934757, -27.865167548500949]
       }
       Object {
 	$PropName		"DockComponentsInfo"
@@ -107,9 +107,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ewk15101"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Tue Sep 11 20:11:58 2018"
-  RTWModifiedTimeStamp	  458597513
-  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  LastModifiedDate	  "Tue Sep 11 20:30:57 2018"
+  RTWModifiedTimeStamp	  458598650
+  ModelVersionFormat	  "1.%<AutoIncrement:2>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -991,6 +991,19 @@ Model {
   }
   BlockParameterDefaults {
     Block {
+      BlockType		      Constant
+      Value		      "1"
+      VectorParams1D	      on
+      SamplingMode	      "Sample based"
+      OutMin		      "[]"
+      OutMax		      "[]"
+      OutDataTypeStr	      "Inherit: Inherit from 'Constant value'"
+      LockScale		      off
+      SampleTime	      "inf"
+      FramePeriod	      "inf"
+      PreserveConstantTs      off
+    }
+    Block {
       BlockType		      Gain
       Gain		      "1"
       Multiplication	      "Element-wise(K.*u)"
@@ -1091,7 +1104,7 @@ Model {
   }
   System {
     Name		    "asgnmnt2_"
-    Location		    [93, 84, 907, 617]
+    Location		    [93, 87, 907, 620]
     Open		    on
     PortBlocksUseCompactNotation off
     SetDomainSpec	    off
@@ -1106,9 +1119,17 @@ Model {
     TiledPaperMargins	    [0.500000, 0.500000, 0.500000, 0.500000]
     TiledPageScale	    1
     ShowPageBoundaries	    off
-    ZoomFactor		    "100"
+    ZoomFactor		    "125"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "14"
+    SIDHighWatermark	    "19"
+    Block {
+      BlockType		      Constant
+      Name		      "Constant"
+      SID		      "18"
+      Position		      [-90, 75, -60, 105]
+      ZOrder		      18
+      Value		      "-5/40"
+    }
     Block {
       BlockType		      Gain
       Name		      "Gain"
@@ -1116,6 +1137,7 @@ Model {
       Position		      [220, 120, 250, 150]
       ZOrder		      11
       BlockMirror	      on
+      Gain		      "0"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1127,6 +1149,7 @@ Model {
       Position		      [250, 155, 280, 185]
       ZOrder		      12
       BlockMirror	      on
+      Gain		      "16"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1152,7 +1175,7 @@ Model {
       Name		      "Mux"
       SID		      "14"
       Ports		      [2, 1]
-      Position		      [380, 201, 385, 239]
+      Position		      [370, 186, 375, 224]
       ZOrder		      14
       ShowName		      off
       Inputs		      "2"
@@ -1163,8 +1186,20 @@ Model {
       Name		      "Product"
       SID		      "3"
       Ports		      [2, 1]
-      Position		      [130, 57, 160, 88]
+      Position		      [125, 57, 155, 88]
       ZOrder		      3
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      RndMeth		      "Floor"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product1"
+      SID		      "16"
+      Ports		      [2, 1]
+      Position		      [35, 47, 65, 78]
+      ZOrder		      16
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       RndMeth		      "Floor"
@@ -1175,7 +1210,7 @@ Model {
       Name		      "Scope"
       SID		      "13"
       Ports		      [1]
-      Position		      [365, 74, 395, 106]
+      Position		      [370, 74, 400, 106]
       ZOrder		      13
       ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
       "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
@@ -1185,12 +1220,29 @@ Model {
       Floating		      off
     }
     Block {
+      BlockType		      Scope
+      Name		      "Scope1"
+      SID		      "19"
+      Ports		      [1]
+      Position		      [390, 189, 420, 221]
+      ZOrder		      19
+      ScopeSpecificationString "Simulink.scopes.TimeScopeBlockCfg('CurrentConfiguration', extmgr.ConfigurationSet(extm"
+      "gr.Configuration('Core','General UI',true),extmgr.Configuration('Core','Source UI',true),extmgr.Configuration('S"
+      "ources','WiredSimulink',true,'DataLoggingVariableName','ScopeData1'),extmgr.Configuration('Visuals','Time Domain"
+      "',true),extmgr.Configuration('Tools','Plot Navigation',true),extmgr.Configuration('Tools','Measurements',true)),"
+      "'Version','2018a')"
+      NumInputPorts	      "1"
+      Floating		      off
+    }
+    Block {
       BlockType		      Sin
       Name		      "Sine Wave"
       SID		      "6"
       Ports		      [0, 1]
-      Position		      [-10, 30, 20, 60]
+      Position		      [-15, 15, 15, 45]
       ZOrder		      6
+      Amplitude		      "5/40"
+      Frequency		      "5"
       SampleTime	      "0"
     }
     Block {
@@ -1198,16 +1250,30 @@ Model {
       Name		      "Sine Wave1"
       SID		      "10"
       Ports		      [0, 1]
-      Position		      [30, 60, 60, 90]
+      Position		      [-90, 40, -60, 70]
       ZOrder		      10
+      Amplitude		      "5/40"
+      Frequency		      "5"
       SampleTime	      "0"
     }
     Block {
       BlockType		      Step
       Name		      "Step"
       SID		      "7"
-      Position		      [70, 90, 100, 120]
+      Position		      [35, 100, 65, 130]
       ZOrder		      7
+      Time		      "9"
+      Before		      "1"
+      After		      "0"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Step
+      Name		      "Step1"
+      SID		      "15"
+      Position		      [-15, 65, 15, 95]
+      ZOrder		      15
+      Time		      "1.5*pi"
       SampleTime	      "0"
     }
     Block {
@@ -1229,11 +1295,25 @@ Model {
       Name		      "Sum1"
       SID		      "5"
       Ports		      [2, 1]
-      Position		      [80, 35, 100, 55]
+      Position		      [75, 20, 95, 40]
       ZOrder		      5
       ShowName		      off
       IconShape		      "round"
       Inputs		      "|++"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum2"
+      SID		      "17"
+      Ports		      [2, 1]
+      Position		      [-45, 45, -25, 65]
+      ZOrder		      17
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|-+"
       InputSameDT	      off
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1266,7 +1346,7 @@ Model {
       ZOrder		      3
       SrcBlock		      "Sum1"
       SrcPort		      1
-      Points		      [9, 0; 0, 20]
+      Points		      [9, 0; 0, 35]
       DstBlock		      "Product"
       DstPort		      1
     }
@@ -1274,24 +1354,26 @@ Model {
       ZOrder		      5
       SrcBlock		      "Product"
       SrcPort		      1
-      Points		      [8, 0; 0, 3]
-      DstBlock		      "Sum"
-      DstPort		      1
+      Points		      [6, 0]
+      Branch {
+	ZOrder			35
+	Points			[0, 140]
+	DstBlock		"Mux"
+	DstPort			2
+      }
+      Branch {
+	ZOrder			34
+	Points			[8, 0]
+	DstBlock		"Sum"
+	DstPort			1
+      }
     }
     Line {
       ZOrder		      6
       SrcBlock		      "Step"
       SrcPort		      1
-      Points		      [9, 0; 0, -25]
+      Points		      [39, 0; 0, -35]
       DstBlock		      "Product"
-      DstPort		      2
-    }
-    Line {
-      ZOrder		      8
-      SrcBlock		      "Sine Wave1"
-      SrcPort		      1
-      Points		      [25, 0]
-      DstBlock		      "Sum1"
       DstPort		      2
     }
     Line {
@@ -1307,14 +1389,23 @@ Model {
       SrcPort		      1
       Points		      [10, 0]
       Branch {
+	ZOrder			27
+	Points			[5, 0]
+	Branch {
+	  ZOrder		  33
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Branch {
+	  ZOrder		  32
+	  DstBlock		  "Scope"
+	  DstPort		  1
+	}
+      }
+      Branch {
 	ZOrder			19
 	Points			[0, 80]
 	DstBlock		"Gain1"
-	DstPort			1
-      }
-      Branch {
-	ZOrder			11
-	DstBlock		"Scope"
 	DstPort			1
       }
     }
@@ -1322,7 +1413,7 @@ Model {
       ZOrder		      13
       SrcBlock		      "Gain1"
       SrcPort		      1
-      Points		      [-74, 0; 0, -68]
+      Points		      [-71, 0]
       DstBlock		      "Sum"
       DstPort		      2
     }
@@ -1333,6 +1424,51 @@ Model {
       Points		      [-20, 0]
       DstBlock		      "Sum"
       DstPort		      3
+    }
+    Line {
+      ZOrder		      21
+      SrcBlock		      "Step1"
+      SrcPort		      1
+      Points		      [5, 0; 0, -10]
+      DstBlock		      "Product1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      22
+      SrcBlock		      "Product1"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "Sum1"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      23
+      SrcBlock		      "Sine Wave1"
+      SrcPort		      1
+      DstBlock		      "Sum2"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      24
+      SrcBlock		      "Constant"
+      SrcPort		      1
+      Points		      [20, 0]
+      DstBlock		      "Sum2"
+      DstPort		      2
+    }
+    Line {
+      ZOrder		      25
+      SrcBlock		      "Sum2"
+      SrcPort		      1
+      DstBlock		      "Product1"
+      DstPort		      1
+    }
+    Line {
+      ZOrder		      36
+      SrcBlock		      "Mux"
+      SrcPort		      1
+      DstBlock		      "Scope1"
+      DstPort		      1
     }
   }
 }
