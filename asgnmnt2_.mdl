@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.6"
+    ComputedModelVersion    "1.7"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -118,9 +118,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ewk15101"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Sep 13 19:33:46 2018"
-  RTWModifiedTimeStamp	  458768011
-  ModelVersionFormat	  "1.%<AutoIncrement:6>"
+  LastModifiedDate	  "Thu Sep 13 19:39:01 2018"
+  RTWModifiedTimeStamp	  458768324
+  ModelVersionFormat	  "1.%<AutoIncrement:7>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -1175,7 +1175,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "18"
-      Position		      [-60, 35, -30, 65]
+      Position		      [-60, 70, -30, 100]
       ZOrder		      18
       Value		      "-5/40"
     }
@@ -1289,7 +1289,7 @@ Model {
       Name		      "Sine Wave"
       SID		      "6"
       Ports		      [0, 1]
-      Position		      [-45, 65, -15, 95]
+      Position		      [-45, 30, -15, 60]
       ZOrder		      6
       Amplitude		      "5/40"
       Frequency		      "5"
@@ -1468,7 +1468,7 @@ Model {
       ZOrder		      55
       SrcBlock		      "Clock"
       SrcPort		      1
-      Points		      [9, 0]
+      Points		      [15, 0]
       Branch {
 	ZOrder			64
 	Points			[0, 85]
@@ -1492,6 +1492,7 @@ Model {
       ZOrder		      61
       SrcBlock		      "Sine Wave"
       SrcPort		      1
+      Points		      [33, 0; 0, 35]
       DstBlock		      "Switch"
       DstPort		      3
     }
@@ -1499,6 +1500,7 @@ Model {
       ZOrder		      62
       SrcBlock		      "Constant"
       SrcPort		      1
+      Points		      [42, 0; 0, -35]
       DstBlock		      "Switch"
       DstPort		      1
     }
