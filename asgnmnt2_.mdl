@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.8"
+    ComputedModelVersion    "1.9"
     NumModelReferences	    0
     NumTestPointedSignals   0
     NumProvidedFunctions    0
@@ -118,9 +118,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "ewk15101"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Sep 13 20:03:04 2018"
-  RTWModifiedTimeStamp	  458769772
-  ModelVersionFormat	  "1.%<AutoIncrement:8>"
+  LastModifiedDate	  "Mon Sep 17 09:56:03 2018"
+  RTWModifiedTimeStamp	  459077859
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
   LibraryLinkDisplay	  "disabled"
@@ -233,7 +233,7 @@ Model {
 	  Description		  ""
 	  StartTime		  "0.0"
 	  StopTime		  "15.0"
-	  AbsTol		  "1e-7"
+	  AbsTol		  "1e-8"
 	  AutoScaleAbsTol	  "on"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -246,7 +246,7 @@ Model {
 	  MaxStep		  "auto"
 	  MinStep		  "auto"
 	  MaxConsecutiveMinStep	  "1"
-	  RelTol		  "1e-7"
+	  RelTol		  "1e-8"
 	  EnableMultiTasking	  off
 	  ConcurrentTasks	  off
 	  Solver		  "ode45"
