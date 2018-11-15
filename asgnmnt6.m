@@ -1,0 +1,25 @@
+clear all
+syms s Ai Aii Aiii Aiv Ri Rii Riii Riv Qin Qi Qii Qiii Qiv Hi Hii Hiii Hiv
+Hii=solve(Hii-Hiii==Rii*Qii,Hii)
+Hi=solve(Hii-Hi==Ri*Qi,Hi)
+Qi=solve(Qi==Ai*s*Hi,Qi)
+Qii=solve(Qin-Qi-Qii==Aii*s*Hii,Qii)
+Qiii=solve(Qii-Qiii==Aiii*s*Hiii,Qiii)
+Qiv=solve(Qiii-Qiv==Aiv*s*Hiv,Qiv)
+Hiv=solve(Hiv==Riv*Qiv,Hiv)
+Hiii=solve(Hiii-Hiv==Riii*Qiii,Hiii)
+TF=simplify(Hiii)
+TFs=collect(TF,s)
+for n=1:4
+    r(n)=randi(3)
+    a(n)=randi(3)
+end
+ex=subs(TF,Ai,a(1))
+ex=subs(ex,Aii,a(2))
+ex=subs(ex,Aiii,a(3))
+ex=subs(ex,Aiv,a(4))
+ex=subs(ex,Ri,r(1))
+ex=subs(ex,Rii,r(2))
+ex=subs(ex,Riii,r(3))
+ex=subs(ex,Riv,r(4))
+ex=collect(ex,s)
